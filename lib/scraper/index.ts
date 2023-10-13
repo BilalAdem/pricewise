@@ -67,7 +67,7 @@ export async function scrapeAmazonProduct(url: string) {
       currentPrice: Number(currentPrice) || Number(originalPrice),
       originalPrice: Number(originalPrice) || Number(currentPrice),
       priceHistory: [],
-      discountRate: Number(discountRate),
+      discountRate: isNaN(Number(discountRate)) ? 0 : Number(discountRate),
       category: 'category',
       reviewsCount:100,
       stars: 4.5,
